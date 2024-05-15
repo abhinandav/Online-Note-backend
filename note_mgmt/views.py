@@ -18,7 +18,7 @@ class ListNoteView(generics.ListAPIView):
 
     def get_queryset(self):
         user_id = self.kwargs.get('pk')
-        return NoteHistory.objects.filter(user=user_id).order_by('created_at')
+        return NoteHistory.objects.filter(user=user_id).order_by('-created_at')
 
 
 class RetrieveEditView(generics.RetrieveUpdateAPIView):
